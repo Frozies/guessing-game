@@ -3,36 +3,37 @@
 
 ## To create a Guessing Game: In a Nutshell:
 
-1. -[ ] Determine and build documentation of:
+Determine and build documentation of:
 
-2. -[ ]  Determine Initial Actors (use-cases)
+Determine Initial Actors (use-cases)
 
-3. -[ ]  Build alpha Procedural version of project
+Build alpha Procedural version of project
 
-4. -[ ]  Turn-in: Basic version of number guessing game
+Turn-in: Basic version of number guessing game
 
-5. -[ ]  Determine Object Structures (Classes) to be used in beta
+Determine Object Structures (Classes) to be used in beta
 
-6. -[ ]  Turn-in: Class UML
+Turn-in: Class UML
 
-7. -[ ]  Build a command-line OOP beta version of program
+Build a command-line OOP beta version of program
 
-8. -[ ]  Turn-in: OOP beta version of program
+Turn-in: OOP beta version of program
 
-9. -[ ]  Add file handling for storage
+Add file handling for storage
 
-10. -[ ]  Add nested structures, overrides, and overloads as needed (i.e. clean up)
+Add nested structures, overrides, and overloads as needed (i.e. clean up)
 
-11. -[ ]  test, test, test SHIP!
+test, test, test SHIP!
+
 Turn-in: Final project with file "top scorers!"
 
 
 
 ## Phase 1
 
-1. -[ ]  plan project
+1. -[x]  plan project
 
-2. -[ ]  ensure artifacts due and due dates are known
+2. -[x]  ensure artifacts due and due dates are known
 
 3. -[ ]  build plan for alpha program (first deliverable: Flowchart)
 
