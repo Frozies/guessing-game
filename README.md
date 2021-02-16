@@ -1,7 +1,7 @@
-#Here is a Java Guessing game built for COP 2006.
+# Here is a Java Guessing game built for COP 2006.
 
 
-##To create a Guessing Game: In a Nutshell:
+## To create a Guessing Game: In a Nutshell:
 
 1. -[ ] Determine and build documentation of:
 
@@ -28,7 +28,7 @@ Turn-in: Final project with file "top scorers!"
 
 
 
-##Phase 1
+## Phase 1
 
 1. -[ ]  plan project
 
@@ -38,7 +38,7 @@ Turn-in: Final project with file "top scorers!"
 
 
 
-##Phase 2
+## Phase 2
 
 1. -[ ] Build procedural Alpha Version which:
 
@@ -79,7 +79,7 @@ If exit or they lost: output total score
 
 15. Turn-in: Alpha Version of Program
 
-##Phase 3
+## Phase 3
 
 1. -[ ] Add appropriate classes
 
@@ -91,7 +91,7 @@ If exit or they lost: output total score
 
 
 
-##Final Phase
+## Final Phase
 
 1. -[ ] Refactor Procedural Alpha Project to OOP Beta
 
