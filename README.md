@@ -35,7 +35,7 @@ Turn-in: Final project with file "top scorers!"
 
 2. -[x]  ensure artifacts due and due dates are known
 
-3. -[ ]  build plan for alpha program (first deliverable: Flowchart)
+3. -[x]  build plan for alpha program (first deliverable: Flowchart)
 
 
 
@@ -43,42 +43,40 @@ Turn-in: Final project with file "top scorers!"
 
 1. -[ ] Build procedural Alpha Version which:
 
-2. -[ ] Randomly generate a number between 1 and 15
+2. -[x] Randomly generate a number between 1 and 15
 
 3. -[ ] Track each round's score (which starts at 10)
 
 4. -[ ] Track the player's total score
 
-5. -[ ] Take in input:
+5. -[x] Take in input:
 
 6. -[ ] Player Name
 (First/Last/MI but get full)
 I.e. I would enter: "Josiah S Greenwell"
 
-7. -[ ] Player's DoB (get as MM/DD/YYYY)
+7. -[ ] Player's DoB (get as MM/DD/YYYY) Store as 3 separate variables
 
-8. -[ ] Store as 3 separate variables
+8. -[x] Player's guess
 
-9. -[ ] Player's guess
+9. -[ ] Validate Player guess (should be between..)
 
-10. -[ ] Validate Player guess (should be between..)
+10. -[ ] Determine if Player guess is high/low/correct
 
-11. -[ ] Determine if Player guess is high/low/correct
+11. -[ ] If correct: output score
 
-12. -[ ] If correct: output score
-
-13. -[ ] If incorrect:
+12. -[ ] If incorrect:
 Subtract 1 from score
 Determine if score is 0
 Return a "You lose" message with computer's number
 
-14. -[ ] If Score >0:
+13. -[ ] If Score >0:
 Determine if high/low and output correct message for these
 If the Player did not lose: Ask Player if they want to play again and repeat game or exit based on answer
 If new game: add round score to total
 If exit or they lost: output total score
 
-15. Turn-in: Alpha Version of Program
+14. Turn-in: Alpha Version of Program
 
 ## Phase 3
 
