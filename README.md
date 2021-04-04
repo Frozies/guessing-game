@@ -59,9 +59,9 @@ I.e. I would enter: "Josiah S Greenwell"
 
 8. -[x] Player's guess
 
-9. -[ ] Validate Player guess (should be between..)
+9. -[x] Validate Player guess (should be between..)
 
-10. -[ ] Determine if Player guess is high/low/correct
+10. -[x] Determine if Player guess is high/low/correct
 
 11. -[ ] If correct: output score
 

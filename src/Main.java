@@ -11,8 +11,10 @@ public class Main {
     /* Game Information */
     static int currentScore = 0; // Points
     static int totalScore; // Points
-    static int attempts = 3; // "Lives"
+    static int initialAttempts = 5; // "Lives"
+    static int currentAttempts = initialAttempts;
     static boolean nextGame = false;
+    static int guessRange = 15;
 
 
     /* User Information */
@@ -25,48 +27,96 @@ public class Main {
     static int correctAnswerWeight = 10; // Points
     static int wrongAnswerWeight = 10; // Points
 
-    /* TODO */
-    /* User input
-    * Single rounds -> multi-round keeping player information in memory.
+    /* TODO
     * Per round score
     * Save score using a Map name:totalScore
-    * Finish Game loop
     * Prettify game start user experience
-    * Check if input is correct (an int, or a string, or whatever)
     */
 
     public static void main(String[] args) {
-        /* Setup a new game*/
+        currentScore = 0;
+
+        //Start Game!
+        getUserDetails();
+        mainGame();
+
+        /* Recalculate Score */
+        //TODO: User's score
+    }
+
+    static void getUserDetails() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("What is your full name?");
+        fullName = scan.next();
+
+        // TODO: Validate these inputs
+        // TODO: Fix the scanner input
+        /*System.out.println("What is your birth year?");
+        birthYear = scan.nextInt();
+
+        System.out.println("What is your birth month?");
+        birthMonth = scan.nextInt();
+
+        System.out.println("What is your birth day?");
+        birthDay = scan.nextInt();*/
+        scan.close();
+    }
+
+    //Gameplay loop
+    static void mainGame() {
+        int randNumber = (int) (Math.random()*guessRange); // Create a random number 1 and the set range
         nextGame = false;
-        int randNumber = (int) (Math.random()*15); // Create a random number 1-15
+        currentAttempts = initialAttempts;
 
         /* Start Game */
-        while(attempts!=0 && !nextGame){
+        while(currentAttempts!=0 && !nextGame){
             // Start the program by asking the user for input and comparing the guess to the randomly generated number.
-            compareGuess(getUserInput(), randNumber);
+            compareGuess(getUserGuess(), randNumber);
         }
 
-        /* Finish Current Game */
-        /* Recalculate Score */
-        /* End game if no attempts left */
-        if (attempts <= 0) {
-            System.out.println("You've run out of attempts!");
+        if (currentAttempts <= 0) {
+            System.out.println("You've run out of tries!");
+        }
+        restartGame();
+    }
+
+    static void restartGame() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Would you like to play again?");
+
+        if (scan.next().startsWith("y")) {
+            System.out.println("Starting another game!");
+            mainGame(); // Starts another game!
         } else {
-
+            /*TODO: Save total score*/
+            System.out.println("Exiting game...");
+            System.exit(0);
         }
-
-
-
-        // Would you like to continue?
-        // if so, requeue game
-        // If not, save current total scores
+        scan.close();
     }
 
     // This method asks for a user input for an integer. Returns the integer.
-    static int getUserInput() {
+    static int getUserGuess() {
+        boolean validGuess = false;
+        int userGuess = 0;
         Scanner scan = new Scanner(System.in);
-        System.out.println("Select a number between 1 - 15: ");
-        return scan.nextInt();
+        
+        while (!validGuess){
+            try {
+                System.out.println("Select a number between 1 - " + guessRange + ". You have " + currentAttempts + " tries: ");
+                userGuess = scan.nextInt();
+
+            } catch (Exception e) {
+                System.out.println("Please input an integer!");
+                getUserGuess(); // Creates a new loop
+                break; // Breaks current loop. Weird but okay
+            }
+
+            validGuess = validateGuess(userGuess, guessRange);
+        }
+        scan.close();
+        return userGuess;
     }
 
     // This method compares the user input and the randomly generated number.
@@ -76,11 +126,21 @@ public class Main {
             nextGame = true;
 
         } else if(currentGuess>randNumber) {
+            currentAttempts -= 1;
             System.out.println("Your guess was too high! Try again.");
 
         } else if (currentGuess<randNumber) {
+            currentAttempts -= 1;
             System.out.println("Your guess was too low! Try again.");
         }
         return;
+    }
+
+    static boolean validateGuess(int currentGuess, int guessRange){
+        if ((currentGuess < 1 || currentGuess > guessRange)){
+            System.out.println("You're guess is out of range!");
+            return false;
+        } else
+            return true;
     }
 }
