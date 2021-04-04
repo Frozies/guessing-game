@@ -10,12 +10,11 @@ import java.util.Scanner;
 public class Main {
     /* Game Information */
     static int currentScore = 0; // Points
-    static int totalScore; // Points
+    static int totalScore = 0; // Points
     static int initialAttempts = 5; // "Lives"
     static int currentAttempts = initialAttempts;
     static boolean nextGame = false;
     static int guessRange = 15;
-
 
     /* User Information */
     static String fullName; // First M Last
@@ -23,25 +22,24 @@ public class Main {
     static int birthMonth; // MM
     static int birthDay; // DD
 
-    /* Points system adjustments */
+    /* Points system weights */
     static int correctAnswerWeight = 10; // Points
     static int wrongAnswerWeight = 10; // Points
 
-    /* TODO
-    * Per round score
-    * Save score using a Map name:totalScore
-    * Prettify game start user experience
-    */
-
     public static void main(String[] args) {
         currentScore = 0;
+
+        System.out.println("Hello & welcome to the guessing game!");
+        //TODO: Prettify introduction. explain rules, weights, etc.
 
         //Start Game!
         getUserDetails();
         mainGame();
 
         /* Recalculate Score */
-        //TODO: User's score
+        //TODO: User's score map to file
+
+        //TODO: separate into multiple classes
     }
 
     static void getUserDetails() {
@@ -129,11 +127,10 @@ public class Main {
             currentAttempts -= 1;
             System.out.println("Your guess was too high! Try again.");
 
-        } else if (currentGuess<randNumber) {
+        } else {
             currentAttempts -= 1;
             System.out.println("Your guess was too low! Try again.");
         }
-        return;
     }
 
     static boolean validateGuess(int currentGuess, int guessRange){
