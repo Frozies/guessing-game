@@ -27,7 +27,6 @@ public class Main {
     static int wrongAnswerWeight = -1; // Points
 
     public static void main(String[] args) {
-        currentScore = 0;
 
         System.out.println("Hello & welcome to the guessing game!");
         //TODO: Prettify introduction. explain rules, weights, etc.
@@ -37,9 +36,7 @@ public class Main {
         getUsersBirthdate();
         mainGame();
 
-        /* Recalculate Score */
         //TODO: Save user's score map to file
-
         //TODO: separate into multiple classes
     }
 
@@ -52,6 +49,7 @@ public class Main {
     static void getUsersBirthdate() {
         Scanner scan = new Scanner(System.in);
 
+        //TODO: Input validation.
         System.out.println("What is your birth year?");
         birthYear = scan.nextInt();
 
