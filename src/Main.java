@@ -34,6 +34,7 @@ public class Main {
 
         //Start Game!
         getUsersName();
+        getUsersBirthdate();
         mainGame();
 
         /* Recalculate Score */
@@ -47,21 +48,22 @@ public class Main {
 
         System.out.println("What is your full name?");
         fullName = scan.next();
+    }
+    static void getUsersBirthdate() {
+        Scanner scan = new Scanner(System.in);
 
-        // TODO: Validate these inputs
-        // TODO: Fix the scanner input
-        /*System.out.println("What is your birth year?");
+        System.out.println("What is your birth year?");
         birthYear = scan.nextInt();
 
         System.out.println("What is your birth month?");
         birthMonth = scan.nextInt();
 
         System.out.println("What is your birth day?");
-        birthDay = scan.nextInt();*/
+        birthDay = scan.nextInt();
     }
 
     //Gameplay loop
-    static void mainGame() {
+    private static void mainGame() {
         int randNumber = (int) (Math.random()*guessRange); // Create a random number 1 and the set range
         nextGame = false;
         currentAttempts = initialAttempts;
@@ -73,23 +75,27 @@ public class Main {
         }
 
         if (currentAttempts <= 0) {
-            System.out.println("You've run out of tries!");
+            System.out.println("You lose!");
+            System.out.println("The correct number was: " + randNumber);
         }
         setTotalScore(totalScore,currentAttempts);
         restartGame();
     }
 
-    static void restartGame() {
+    private static void restartGame() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Would you like to play again?");
+        System.out.println("Would you like to play again? y/n");
 
         if (scan.next().startsWith("y")) {
             System.out.println("Starting another game!");
             mainGame(); // Starts another game!
-        } else {
-            /*TODO: Save total score*/
+        } else if (scan.next().startsWith("n")) {
+            System.out.println("Your Total score is: " + totalScore);
             System.out.println("Exiting game...");
             System.exit(0);
+        } else {
+            System.out.println("Please enter a valid input. y or n");
+            restartGame();
         }
     }
 

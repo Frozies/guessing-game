@@ -41,21 +41,21 @@ Turn-in: Final project with file "top scorers!"
 
 ## Phase 2
 
-1. -[ ] Build procedural Alpha Version which:
+1. -[x] Build procedural Alpha Version which:
 
 2. -[x] Randomly generate a number between 1 and 15
 
-3. -[ ] Track each round's score (which starts at 10)
+3. -[x] Track each round's score (which starts at 10)
 
-4. -[ ] Track the player's total score
+4. -[x] Track the player's total score
 
 5. -[x] Take in input:
 
-6. -[ ] Player Name
+6. -[x] Player Name
 (First/Last/MI but get full)
 I.e. I would enter: "Josiah S Greenwell"
 
-7. -[ ] Player's DoB (get as MM/DD/YYYY) Store as 3 separate variables
+7. -[x] Player's DoB (get as MM/DD/YYYY) Store as 3 separate variables
 
 8. -[x] Player's guess
 
@@ -63,14 +63,14 @@ I.e. I would enter: "Josiah S Greenwell"
 
 10. -[x] Determine if Player guess is high/low/correct
 
-11. -[ ] If correct: output score
+11. -[x] If correct: output score
 
-12. -[ ] If incorrect:
+12. -[x] If incorrect:
 Subtract 1 from score
 Determine if score is 0
 Return a "You lose" message with computer's number
 
-13. -[ ] If Score >0:
+13. -[x] If Score >0:
 Determine if high/low and output correct message for these
 If the Player did not lose: Ask Player if they want to play again and repeat game or exit based on answer
 If new game: add round score to total
