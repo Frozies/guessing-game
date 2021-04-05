@@ -5,6 +5,7 @@
 * COP 2006
 */
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -57,7 +58,6 @@ public class Main {
 
         System.out.println("What is your birth day?");
         birthDay = scan.nextInt();*/
-        scan.close();
     }
 
     //Gameplay loop
@@ -91,7 +91,6 @@ public class Main {
             System.out.println("Exiting game...");
             System.exit(0);
         }
-        scan.close();
     }
 
     // This method asks for a user input for an integer. Returns the integer.
@@ -101,19 +100,10 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         
         while (!validGuess){
-            try {
-                System.out.println("Select a number between 1 - " + guessRange + ". You have " + currentAttempts + " tries: ");
-                userGuess = scan.nextInt();
-
-            } catch (Exception e) {
-                System.out.println("Please input an integer!");
-                getUserGuess(); // Creates a new loop
-                break; // Breaks current loop. Weird but okay
-            }
-
+            System.out.println("Select a number between 1 - " + guessRange + ". You have " + currentAttempts + " tries: ");
+            userGuess = scan.nextInt(); //TODO: input a string then parse it after with validateGuess
             validGuess = validateGuess(userGuess, guessRange);
         }
-        scan.close();
         return userGuess;
     }
 
