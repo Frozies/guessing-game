@@ -11,7 +11,7 @@ public class Main {
     /* Game Information */
     static int currentScore = 0; // Points
     static int totalScore = 0; // Points
-    static int initialAttempts = 5; // "Lives"
+    static int initialAttempts = 10; // "Lives"
     static int currentAttempts = initialAttempts;
     static boolean nextGame = false;
     static int guessRange = 15;
@@ -23,8 +23,7 @@ public class Main {
     static int birthDay; // DD
 
     /* Points system weights */
-    static int correctAnswerWeight = 10; // Points
-    static int wrongAnswerWeight = 10; // Points
+    static int wrongAnswerWeight = -1; // Points
 
     public static void main(String[] args) {
         currentScore = 0;
@@ -33,16 +32,16 @@ public class Main {
         //TODO: Prettify introduction. explain rules, weights, etc.
 
         //Start Game!
-        getUserDetails();
+        getUsersName();
         mainGame();
 
         /* Recalculate Score */
-        //TODO: User's score map to file
+        //TODO: Save user's score map to file
 
         //TODO: separate into multiple classes
     }
 
-    static void getUserDetails() {
+    static void getUsersName() {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("What is your full name?");
@@ -76,6 +75,7 @@ public class Main {
         if (currentAttempts <= 0) {
             System.out.println("You've run out of tries!");
         }
+        setTotalScore(totalScore,currentAttempts);
         restartGame();
     }
 
@@ -124,11 +124,11 @@ public class Main {
             nextGame = true;
 
         } else if(currentGuess>randNumber) {
-            currentAttempts -= 1;
+            currentAttempts += wrongAnswerWeight;
             System.out.println("Your guess was too high! Try again.");
 
         } else {
-            currentAttempts -= 1;
+            currentAttempts += wrongAnswerWeight;
             System.out.println("Your guess was too low! Try again.");
         }
     }
@@ -139,5 +139,10 @@ public class Main {
             return false;
         } else
             return true;
+    };
+
+    public static void setTotalScore(int totalScore, int currentScore) {
+        Main.totalScore = totalScore += currentScore;
+        System.out.println("Your current score is: " + totalScore);
     }
 }
