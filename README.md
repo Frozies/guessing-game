@@ -54,6 +54,7 @@ Turn-in: Final project with file "top scorers!"
 6. -[x] Player Name
 (First/Last/MI but get full)
 I.e. I would enter: "Josiah S Greenwell"
+    
 
 7. -[x] Player's DoB (get as MM/DD/YYYY) Store as 3 separate variables
 
