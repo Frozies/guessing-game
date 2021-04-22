@@ -2,34 +2,50 @@ import java.util.Scanner;
 
 public class User {
     /* User Information */
-    static String fullName; // First M Last
-    static int birthYear; // YYYY
-    static int birthMonth; // MM
-    static int birthDay; // DD
+    private static String fullName; // First M Last
+    private static int birthYear; // YYYY
+    private static int birthMonth; // MM
+    private static int birthDay; // DD
 
 
-    static String getUsersName(Scanner scanner) {
+    private static String askUsersName(Scanner scanner) {
         return Utilities.askForString(scanner, "What is your full name?");
     }
 
-    static int getUsersBirthYear(Scanner scanner){
+    private static int askUsersBirthYear(Scanner scanner){
         return Utilities.askForInt(scanner, "What is your birth year?");
     }
 
-    static int getUsersBirthMonth(Scanner scanner){
+    private static int askUsersBirthMonth(Scanner scanner){
         return Utilities.askForInt(scanner, "What is your birth Month?");
     }
 
-    static int getUsersBirthDay(Scanner scanner){
+    private static int askUsersBirthDay(Scanner scanner){
         return Utilities.askForInt(scanner, "What is your birth Day?");
     }
 
-    static void getUserInformation(){
+    public static void askUserInformation(){
         Scanner scanner = new Scanner(System.in);
 
-        getUsersName(scanner);
-        getUsersBirthYear(scanner);
-        getUsersBirthMonth(scanner);
-        getUsersBirthDay(scanner);
+        askUsersName(scanner);
+        askUsersBirthYear(scanner);
+        askUsersBirthMonth(scanner);
+        askUsersBirthDay(scanner);
+    }
+
+    public static String getFullName() {
+        return fullName;
+    }
+
+    public static int getBirthYear() {
+        return birthYear;
+    }
+
+    public static int getBirthMonth() {
+        return birthMonth;
+    }
+
+    public static int getBirthDay() {
+        return birthDay;
     }
 }
