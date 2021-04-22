@@ -43,59 +43,8 @@ public class Game {
         return randNumber;
     }
 
-    /** I was having an issue with scanner not correctly receiving input.
-     * https://stackoverflow.com/questions/60454346/proper-way-to-use-scanner-with-multiple-functions
-     * user @Iue suggested this method.
-     *
-     * public static void main(String[] args)
-     * {
-     *   Scanner scanner=new Scanner(System.in);
-     *   String answer = ask(scanner, "what is your name?");
-     *   System.out.println("Oh! Hello dear " + answer + "!");
-     *   scanner.close();
-     * }
-     *
-     * private static String ask(Scanner scanner, String question)
-     * {
-     *   System.out.println(question);
-     *   return scanner.nextLine();
-     * }
-     * */
-    private static String askForString(Scanner scanner, String question) {
-        String input;
-        do {
-            System.out.println(question);
-            while(!scanner.hasNext()){
-                System.out.println("That's not a valid input!");
-                scanner.next();
-            }
-            input = scanner.next();
-        } while (input == null);
-        return input;
-    }
-
-    /** Input validation
-     * https://stackoverflow.com/questions/3059333/validating-input-using-java-util-scanner
-     * @polygenelubricants
-     *
-     * Proper usage of hasNextXXX/nextXXX in combination means that a Scanner will NEVER throw an
-     * InputMismatchException/NoSuchElementException.
-     * */
-    private static int askForInt(Scanner scanner, String question) {
-        int number;
-        do {
-            System.out.println(question);
-            while(!scanner.hasNextInt()){
-                System.out.println("That's not a number!");
-                scanner.next();
-            }
-            number = scanner.nextInt();
-        } while (number <= 0);
-        return number;
-    }
-
     private static void restartGame(Scanner scanner) {
-        String userResponse = askForString(scanner, "Would you like to play again? y/n");
+        String userResponse = Utilities.askForString(scanner, "Would you like to play again? y/n");
 
         if (userResponse.startsWith("y")) {
             System.out.println("Starting another game!");
@@ -116,7 +65,7 @@ public class Game {
         int userGuess = 0;
 
         while (!validGuess){
-            userGuess = askForInt( scanner, "Select a number between 1 - " + guessRange + ". You have " + currentAttempts + " tries: ");
+            userGuess = Utilities.askForInt( scanner, "Select a number between 1 - " + guessRange + ". You have " + currentAttempts + " tries: ");
             validGuess = validateGuess(userGuess, guessRange);
         }
         return userGuess;
@@ -144,7 +93,7 @@ public class Game {
             return false;
         } else
             return true;
-    };
+    }
 
     public static void setTotalScore(int totalScore, int currentScore) {
         Game.totalScore = totalScore += currentScore;

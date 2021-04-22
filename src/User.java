@@ -17,7 +17,6 @@ public class User {
     static void setUsersBirthdate() {
         Scanner scan = new Scanner(System.in);
 
-        //TODO: Input validation.
         System.out.println("What is your birth year?");
         birthYear = scan.nextInt();
 
