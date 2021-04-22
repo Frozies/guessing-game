@@ -9,10 +9,12 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello & welcome to the guessing game!");
-        //TODO: Prettify introduction. explain rules, weights, etc.
+
+        System.out.println("The current top 5 high scores are: "); //TODO
 
         User.askUserInformation();
         Game.mainGame();
+//        Utilities.save();
 
         //TODO: Save user's score map to file
     }

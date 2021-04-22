@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.sql.Array;
+import java.util.*;
 
 public final class Utilities {
 
@@ -15,7 +16,7 @@ public final class Utilities {
                 System.out.println("That's not a valid input!");
                 scanner.next();
             }
-            input = scanner.next();
+            input = scanner.nextLine();
         } while (input == null);
         return input;
     }
@@ -38,4 +39,39 @@ public final class Utilities {
         } while (number <= 0);
         return number;
     }
+
+   /* static void save(){
+        HashMap<String,Integer> hashMap = new HashMap();
+
+        hashMap.put("dicks", 100);
+        hashMap.put("dfasd", 90);
+        hashMap.put("lol", 123);
+        hashMap.put("test", 30);
+
+        System.out.println(" - Unsorted - ");
+        for(Map.Entry<String,Integer> entry:hashMap.entrySet()){
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
+        System.out.println(" - Sorted - ");
+        Map<String,Integer> treemap = sortByComparator()
+    }*/
+
+
+    //PLANNING
+    /*
+    *
+    * hashmap name:highscore
+    * get top x:5 highscore loop
+    * set new score. are they sorted?
+    * save to file
+    * load file
+    * read from file
+    *
+    *
+    * load scores
+    * check lowest score
+    * add new to bottom
+    * sort
+    * resave
+    * */
 }
