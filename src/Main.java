@@ -17,7 +17,7 @@ public class Main {
         System.out.println("Hello & welcome to the guessing game!");
         //TODO: Prettify introduction. explain rules, weights, etc.
 
-        user.setUserInformation();
+//        user.setUserInformation();
         game.mainGame();
 
         //TODO: Save user's score map to file
