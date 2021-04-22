@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class Game {
     /* Game Information */
-    static int currentScore = 0; // Points
-    static int totalScore = 0; // Points
+    static int totalScore = User.getScore(); // Points
     static int initialAttempts = 10; // "Lives"
     static int currentAttempts = initialAttempts;
     static boolean nextGame = false;
@@ -98,6 +97,7 @@ public class Game {
     public static void setTotalScore(int totalScore, int currentScore) {
         Game.totalScore = totalScore += currentScore;
         System.out.println("Your current score is: " + totalScore);
+        User.setScore(totalScore);
     }
 
 }

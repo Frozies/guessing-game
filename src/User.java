@@ -6,6 +6,7 @@ public class User {
     private static int birthYear; // YYYY
     private static int birthMonth; // MM
     private static int birthDay; // DD
+    private static int score = 0;
 
 
     private static String askUsersName(Scanner scanner) {
@@ -27,25 +28,50 @@ public class User {
     public static void askUserInformation(){
         Scanner scanner = new Scanner(System.in);
 
-        askUsersName(scanner);
-        askUsersBirthYear(scanner);
-        askUsersBirthMonth(scanner);
-        askUsersBirthDay(scanner);
+        setFullName(askUsersName(scanner));
+        setBirthYear(askUsersBirthYear(scanner));
+        setBirthMonth(askUsersBirthMonth(scanner));
+        setBirthDay(askUsersBirthDay(scanner));
     }
 
     public static String getFullName() {
         return fullName;
     }
 
+    public static void setFullName(String fullName) {
+        User.fullName = fullName;
+    }
+
+
     public static int getBirthYear() {
         return birthYear;
+    }
+
+    public static void setBirthYear(int birthYear) {
+        User.birthYear = birthYear;
     }
 
     public static int getBirthMonth() {
         return birthMonth;
     }
 
+    public static void setBirthMonth(int birthMonth) {
+        User.birthMonth = birthMonth;
+    }
+
     public static int getBirthDay() {
         return birthDay;
+    }
+
+    public static void setBirthDay(int birthDay) {
+        User.birthDay = birthDay;
+    }
+
+    public static int getScore() {
+        return score;
+    }
+
+    public static void setScore(int score) {
+        User.score = score;
     }
 }
