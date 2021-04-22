@@ -7,28 +7,29 @@ public class User {
     static int birthMonth; // MM
     static int birthDay; // DD
 
-    static void setUsersName() {
-        Scanner scan = new Scanner(System.in);
 
-        System.out.println("What is your full name?");
-        fullName = scan.next();
+    static String getUsersName(Scanner scanner) {
+        return Utilities.askForString(scanner, "What is your full name?");
     }
 
-    static void setUsersBirthdate() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("What is your birth year?");
-        birthYear = scan.nextInt();
-
-        System.out.println("What is your birth month?");
-        birthMonth = scan.nextInt();
-
-        System.out.println("What is your birth day?");
-        birthDay = scan.nextInt();
+    static int getUsersBirthYear(Scanner scanner){
+        return Utilities.askForInt(scanner, "What is your birth year?");
     }
 
-    static void setUserInformation(){
-        setUsersName();
-        setUsersBirthdate();
+    static int getUsersBirthMonth(Scanner scanner){
+        return Utilities.askForInt(scanner, "What is your birth Month?");
+    }
+
+    static int getUsersBirthDay(Scanner scanner){
+        return Utilities.askForInt(scanner, "What is your birth Day?");
+    }
+
+    static void getUserInformation(){
+        Scanner scanner = new Scanner(System.in);
+
+        getUsersName(scanner);
+        getUsersBirthYear(scanner);
+        getUsersBirthMonth(scanner);
+        getUsersBirthDay(scanner);
     }
 }
