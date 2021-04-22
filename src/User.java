@@ -38,7 +38,7 @@ public class User {
         return fullName;
     }
 
-    public static void setFullName(String fullName) {
+    private static void setFullName(String fullName) {
         User.fullName = fullName;
     }
 
@@ -47,7 +47,7 @@ public class User {
         return birthYear;
     }
 
-    public static void setBirthYear(int birthYear) {
+    private static void setBirthYear(int birthYear) {
         User.birthYear = birthYear;
     }
 
@@ -55,7 +55,7 @@ public class User {
         return birthMonth;
     }
 
-    public static void setBirthMonth(int birthMonth) {
+    private static void setBirthMonth(int birthMonth) {
         User.birthMonth = birthMonth;
     }
 
@@ -63,7 +63,7 @@ public class User {
         return birthDay;
     }
 
-    public static void setBirthDay(int birthDay) {
+    private static void setBirthDay(int birthDay) {
         User.birthDay = birthDay;
     }
 
