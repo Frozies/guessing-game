@@ -43,7 +43,7 @@ public class Game {
     }
 
     private static void restartGame(Scanner scanner) {
-        String userResponse = Utilities.askForString(scanner, "Would you like to play again? y/n");
+        String userResponse = Utilities.askForString(scanner, "Would you like to play again? Type: yes or no");
 
         if (userResponse.startsWith("y")) {
             System.out.println("Starting another game!");
@@ -53,7 +53,7 @@ public class Game {
             System.out.println("Exiting game...");
             System.exit(0);
         } else {
-            System.out.println("Please enter a valid input. y or n");
+            System.out.println("Please enter a valid input. Type: yes or no");
             restartGame(scanner);
         }
     }
