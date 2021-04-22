@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class Game {
     /* Game Information */
-    static int totalScore = User.getScore(); // Points
-    static int initialAttempts = 10; // "Lives"
-    static int currentAttempts = initialAttempts;
-    static boolean nextGame = false;
-    static int guessRange = 10;
+    private static int totalScore = User.getScore(); // Points
+    private static int initialAttempts = 10; // "Lives"
+    private static int currentAttempts = initialAttempts;
+    private static boolean nextGame = false;
+    private static int guessRange = 10;
 
     /* Points system weights */
-    static int wrongAnswerWeight = -1; // Points
+    private static int wrongAnswerWeight = -1; // Points
 
     // Gameplay loop
     public static void mainGame() {
@@ -59,7 +59,7 @@ public class Game {
     }
 
     // This method asks for a user input for an integer. Returns the integer.
-    static int askUserGuess(Scanner scanner) {
+    private static int askUserGuess(Scanner scanner) {
         boolean validGuess = false;
         int userGuess = 0;
 
@@ -71,7 +71,7 @@ public class Game {
     }
 
     // This method compares the user input and the randomly generated number.
-    static void compareGuess(int currentGuess, int randNumber) {
+    private static void compareGuess(int currentGuess, int randNumber) {
         if(currentGuess == randNumber) {
             System.out.println("You guessed correctly!!");
             nextGame = true;
@@ -86,7 +86,7 @@ public class Game {
         }
     }
 
-    static boolean validateGuess(int currentGuess, int guessRange){
+    private static boolean validateGuess(int currentGuess, int guessRange){
         if ((currentGuess < 1 || currentGuess > guessRange)){
             System.out.println("You're guess is out of range!");
             return false;
@@ -94,7 +94,7 @@ public class Game {
             return true;
     }
 
-    public static void setTotalScore(int totalScore, int currentScore) {
+    private static void setTotalScore(int totalScore, int currentScore) {
         Game.totalScore = totalScore += currentScore;
         System.out.println("Your current score is: " + totalScore);
         User.setScore(totalScore);
